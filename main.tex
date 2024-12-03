@@ -1,0 +1,83 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{pgf}
+\usepackage{enumitem}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\usepackage[figurename=Obr.,tablename=Tab.]{caption}
+\usepackage{graphicx}
+\usepackage{pgffor}
+
+
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.0cm, right=2.0cm}
+
+% Variables, fill it here!
+\newcommand{\studentName}{Bc. Pavel Mikula}
+\newcommand{\studentID}  {MIK0486}
+\newcommand{\teacherName}{Mgr. Pavla Dráždilová, Ph.D.}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Table and Image references
+\newcommand{\tabref}[1]{Tab. \ref{#1}}
+\newcommand{\figref}[1]{Obr. \ref{#1}}
+
+% Array commands
+\newcommand{\av}[2]{%
+    \pgfmathparse{{#1}[#2]}%
+    \mbox{\pgfmathresult}%
+}
+
+\newcommand{\orderArray}[1]{%
+    (\av{#1}{0}, \av{#1}{5}, \av{#1}{6}, \av{#1}{7}, \av{#1}{8}, \av{#1}{9}, \av{#1}{10}, \av{#1}{11}, \av{#1}{12}, \av{#1}{1}, \av{#1}{2}, \av{#1}{3}, \av{#1}{4})%
+}
+
+% Type of table columns that orients text to center
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+% Title and header section
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{assets/logo.png} \\[4em]
+    \vspace{4em}
+    \textbf{\huge{Petriho Sítě I}} \\
+    \vspace{4em}
+    \textbf{\large{Semestrální projekt - Řízení světelné křižovatky}} \\
+\end{center}
+
+% Student information, values are implemented in variable section above
+\vspace{3em}
+\hspace{2em}
+\begin{tabular}{ll}
+    \textbf{Jméno studentky/studenta:}  & \hspace{6em} \studentName \\[0.5em]
+    \textbf{Osobní číslo:}              & \hspace{6em} \studentID   \\[0.5em]
+    \textbf{Jméno cvičící/cvičícího:}   & \hspace{6em} \teacherName \\
+\end{tabular}
+
+% Footer section
+\vspace{25em}
+\begin{center}
+    \textbf{Ostrava, AR 2024/2025}
+\end{center}
+
+\newpage
+\input{pages/design}
+\input{pages/introduction}
+\input{pages/graph}
+
+\newpage
+\input{pages/analysis}
+
+\end{document}

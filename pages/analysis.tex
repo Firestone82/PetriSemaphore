@@ -1,0 +1,53 @@
+\section*{Analýza sítě}
+\label{sec:network_analyse}
+
+\subsection*{P-Invarianty Petriho sítě}
+\label{subsec:p_invariants}
+
+\newcommand{\pI}  {0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0}
+\newcommand{\pII} {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+\newcommand{\pIII}{0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1}
+\newcommand{\pIV} {0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0}
+\newcommand{\pV}  {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0}
+\newcommand{\pAll}{1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2}
+
+\begin{itemize}
+    \item $Y_1$ - \orderArray{\pI}
+    \item $Y_2$ - \orderArray{\pII}
+    \item $Y_3$ - \orderArray{\pIII}
+    \item $Y_4$ - \orderArray{\pIV}
+    \item $Y_5$ - \orderArray{\pV}
+\end{itemize}
+
+Celkově pro tuto síť existuje 5 P-invariantů zmíněných výše.
+Při jejich součtu získáme výsledný P-invariant $Y_6$ = \orderArray{\pAll}, na kterém lze vidět plné pokrytí a tím vypovídá, že síť je konzervativní.
+
+\subsection*{T-Invarianty Petriho sítě}
+\label{subsec:t_invariants}
+
+\newcommand{\xI}  {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+\newcommand{\xII} {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1}
+\newcommand{\xIII}{0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0}
+\newcommand{\xIV} {0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0}
+\newcommand{\xAll}{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+
+\begin{itemize}
+    \item $X_1$ - \orderArray{\xI}
+    \item $X_2$ - \orderArray{\xII}
+    \item $X_3$ - \orderArray{\xIII}
+    \item $X_4$ - \orderArray{\xIV}
+\end{itemize}
+
+Celkově pro tuto síť existují 4 T-invarianty zmíněné výše.
+Při jejich součtu získáme výsledný T-invariant $X_5$ = \orderArray{\xAll}, na kterém lze vidět plné pokrytí a tím vypovídá, že síť je živá a repetiční.
+
+\subsection*{Vlastnosti Petriho sítě}
+\label{subsec:network_properties}
+
+\begin{itemize}
+    \item \textbf{Omezenost} - Petriho síť je 1 omezená ve většině míst a 3 omezená v místech fronty auty.
+    \item \textbf{Bezpečnost} - Petriho síť není bezpečná, protože protože některé z přechodů
+    \item \textbf{Živost} - Petriho síť je živá, protože po
+\end{itemize}
+
+\endinput
