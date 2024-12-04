@@ -1,6 +1,8 @@
 \section*{Analýza sítě}
 \label{sec:network_analyse}
 
+V této sekci se budeme zabývat analýzou Petriho sítě, která reprezentuje chování semaforů na křižovatce.
+
 \subsection*{P-Invarianty Petriho sítě}
 \label{subsec:p_invariants}
 
@@ -11,43 +13,74 @@
 \newcommand{\pV}  {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0}
 \newcommand{\pAll}{1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2}
 
-\begin{itemize}
-    \item $Y_1$ - \orderArray{\pI}
-    \item $Y_2$ - \orderArray{\pII}
-    \item $Y_3$ - \orderArray{\pIII}
-    \item $Y_4$ - \orderArray{\pIV}
-    \item $Y_5$ - \orderArray{\pV}
-\end{itemize}
+Pro tuto síť existuje celkem 5 p-invariantů vypsaných níže a výsledný p-invariant po sečtení všech hodnot je $Y_6$ = \orderArrayNumbered{\pAll}.\@
+O všech p-invariantech můžeme říci, že jsou \textbf{minimální}, \textbf{netriviální} a \textbf{v kanonickém tvaru}.
+A celkově tento systém p-invariantů je \textbf{úplný}.
+Počáteční značení $M_0$ = (\orderArrayNumbered{\mO}).
 
-Celkově pro tuto síť existuje 5 P-invariantů zmíněných výše.
-Při jejich součtu získáme výsledný P-invariant $Y_6$ = \orderArray{\pAll}, na kterém lze vidět plné pokrytí a tím vypovídá, že síť je konzervativní.
+\begin{table}[h!]
+    \renewcommand{\arraystretch}{1.5}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{1cm} p{8cm} p{6cm}}%
+            \ & \ul{Strukturální}                    & \ul{Systémové} \\
+            \ & $Y_1^T$ - \orderArrayNumbered{\pI}   & $Y_1^T$ \cdot $M^0$ = 1 \\
+            \ & $Y_2^T$ - \orderArrayNumbered{\pII}  & $Y_2^T$ \cdot $M^0$ = 1 \\
+            \ & $Y_3^T$ - \orderArrayNumbered{\pIII} & $Y_3^T$ \cdot $M^0$ = 1 \\
+            \ & $Y_4^T$ - \orderArrayNumbered{\pIV}  & $Y_4^T$ \cdot $M^0$ = 1 \\
+            \ & $Y_5^T$ - \orderArrayNumbered{\pV}   & $Y_5^T$ \cdot $M^0$ = 3 \\
+        \end{tabular}
+    }
+    \label{tab:p_invariants}
+\end{table}
+\vspace{-1em}
 
 \subsection*{T-Invarianty Petriho sítě}
 \label{subsec:t_invariants}
 
-\newcommand{\xI}  {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-\newcommand{\xII} {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1}
-\newcommand{\xIII}{0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0}
-\newcommand{\xIV} {0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0}
-\newcommand{\xAll}{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+\newcommand{\tI}  {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+\newcommand{\tII} {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1}
+\newcommand{\tIII}{0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0}
+\newcommand{\tIV} {0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0}
+\newcommand{\tAll}{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+
+Stejně tak zde nalezneme 4 t-invarianty, jejichž součet dává výsledný t-invariant \\$X_5$ = (\tAll).\@
+Tyto invarianty jsou \textbf{minimální}, \textbf{netriviální} a \textbf{v kanonickém tvaru}.
+Celkově tento systém t-invariantů je \textbf{úplný}.
+
+\begin{table}[h!]
+    \renewcommand{\arraystretch}{1.5}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{1cm} p{8cm} p{6cm}}%
+            \ & \ul{Strukturální}   & \ul{Systémové} \\
+            \ & $X_1^T$ = ({\tI})                                                    & $\sigma_1$ = $t_A$, $t_B$                \\[-5pt]
+            \ & {\footnotesize pro $M^0$ = (3, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1)}  &                                          \\[5pt]
+            \ & $X_2^T$ = ({\tIII})                                                  & $\sigma_1$ = $t_L$, $t_K$                \\[-5pt]
+            \ & {\footnotesize pro $M^0$ = (3, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0)}  &                                          \\[5pt]
+            \ & $X_3^T$ = ({\tIV})                                                   & $\sigma_1$ = $t_F$, $t_C$, $t_I$, $t_H$  \\[-5pt]
+            \ & {\footnotesize pro $M^0$ = (3, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0)}  &                                          \\[5pt]
+            \ & $X_4^T$ = ({\tIV})                                                   & $\sigma_1$ = $t_G$, $t_J$, $t_D$, $t_E$  \\[-5pt]
+            \ & {\footnotesize pro $M^0$ = (3, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1)}  &                                          \\
+        \end{tabular}
+    }
+    \label{tab:t_invariants}
+\end{table}
+\vspace{-1em}
+
+\newpage
+\subsection*{Vlastnosti PN systému}
+\label{subsec:pn_properties}
+
+Za pomocí P a T invariantů můžeme o síti říci tyto vlastnosti:
 
 \begin{itemize}
-    \item $X_1$ - \orderArray{\xI}
-    \item $X_2$ - \orderArray{\xII}
-    \item $X_3$ - \orderArray{\xIII}
-    \item $X_4$ - \orderArray{\xIV}
-\end{itemize}
-
-Celkově pro tuto síť existují 4 T-invarianty zmíněné výše.
-Při jejich součtu získáme výsledný T-invariant $X_5$ = \orderArray{\xAll}, na kterém lze vidět plné pokrytí a tím vypovídá, že síť je živá a repetiční.
-
-\subsection*{Vlastnosti Petriho sítě}
-\label{subsec:network_properties}
-
-\begin{itemize}
-    \item \textbf{Omezenost} - Petriho síť je 1 omezená ve většině míst a 3 omezená v místech fronty auty.
-    \item \textbf{Bezpečnost} - Petriho síť není bezpečná, protože protože některé z přechodů
-    \item \textbf{Živost} - Petriho síť je živá, protože po
+    \item Síť je \textbf{k-omezená} pro k = 3, kde k je maximální počet aut pohybující se v křižovatce.
+    \item Síť je \textbf{repetiční}, \textbf{reverzibilní}, protože existuje T-Invariant pokrývající všechny přechody. $X_5$ = (\tAll)
+    \item Síť je \textbf{živá}, protože existuje t-invariant, který ukazuje proveditelnost každého přechod.
+    \item Síť je \textbf{\ut{striktně} konzervativní}, protože existuje p-invariant pokrývající všechny stavy. $Y_6$ = \orderArrayNumbered{\pAll}
+    \item {
+        Síť je \textbf{bezpečná} pouze pro vnitřní komponentu systému křižovatky.
+        Celý systém je \textbf{bezpečný} v momentě, kdy je síť omezena pro maximálně 1 auto.
+    }
 \end{itemize}
 
 \endinput

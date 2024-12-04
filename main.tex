@@ -8,12 +8,14 @@
 \usepackage{soul}
 \usepackage{array}
 \usepackage{pgf}
-\usepackage{enumitem}
 \usepackage[normalem]{ulem}
 \usepackage{hyperref}
 \usepackage[figurename=Obr.,tablename=Tab.]{caption}
 \usepackage{graphicx}
 \usepackage{pgffor}
+\usepackage{placeins}
+\usepackage[inline]{enumitem}
+\usepackage{multirow}
 
 
 
@@ -37,7 +39,7 @@
     \mbox{\pgfmathresult}%
 }
 
-\newcommand{\orderArray}[1]{%
+\newcommand{\orderArrayNumbered}[1]{%
     (\av{#1}{0}, \av{#1}{5}, \av{#1}{6}, \av{#1}{7}, \av{#1}{8}, \av{#1}{9}, \av{#1}{10}, \av{#1}{11}, \av{#1}{12}, \av{#1}{1}, \av{#1}{2}, \av{#1}{3}, \av{#1}{4})%
 }
 
@@ -73,11 +75,18 @@
 \end{center}
 
 \newpage
-\input{pages/design}
 \input{pages/introduction}
+\input{pages/design}
+
+\newpage
+\input{pages/description}
+
+\newpage
 \input{pages/graph}
 
 \newpage
 \input{pages/analysis}
+
+\input{pages/summary}
 
 \end{document}

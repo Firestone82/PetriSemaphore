@@ -16,11 +16,11 @@
 \newcommand{\mXII} {0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0}
 \newcommand{\mXIII}{0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0}
 
-Pro graf dosažitelnosti jsem zvolil verzi sítě (viz \figref{fig:network}) k-omezenou pro pouze 1 auto na křižovatce tedy $M_0$ = \orderArray{\mO}.
+Pro graf dosažitelnosti jsem zvolil verzi sítě (viz \figref{fig:network}) k-omezenou pro pouze 1 auto na křižovatce tedy $M_0$ = \orderArrayNumbered{\mO}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\textwidth]{assets/graphK1}
+    \includegraphics[width=1.0\textwidth]{assets/graphK1}
     \caption{Graf dosažitelnosti pro k-omezenou síť s jedním autem na křižovatce.}
     \label{fig:reachability_graph_k1}
 \end{figure}
@@ -78,11 +78,32 @@ Jedinou změnou vlastnosti, je zamítnutí bezpečnosti sítě, která je podmí
     \label{fig:reachability_graph_k2}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[H!]
     \centering
     \includegraphics[width=1.0\textwidth]{assets/graphK3_auto}
     \caption{Graf dosažitelnosti pro k-omezenou síť s třemi auty v křižovatce.}
     \label{fig:reachability_graph_k3}
 \end{figure}
+
+\begin{table}[H!]
+    \renewcommand{\arraystretch}{1.3}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{P{10cm}|P{10cm}}
+            \textbf{Maximální počet aut v křižovatce} & \textbf{Počet dosažitelných značení} \\
+            \hline
+            1    & 13      \\
+            2    & 32      \\
+            3    & 58      \\
+            4    & 91      \\
+            5    & 131     \\
+            10   & 218     \\
+            $>$10 & $>$250 \\
+        \end{tabular}%
+    }
+    \caption{Tabulku počtu dosažitelných značení pro k-omezenou síť s různým počtem aut v křižovatce.}
+    \label{tab:reachability_count}
+\end{table}
+
+\FloatBarrier
 
 \endinput

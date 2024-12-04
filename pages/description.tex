@@ -1,10 +1,59 @@
 \section*{Popis sítě}
 \label{sec:network_description}
 
+Jednotlivá místa v modelu reprezentují možné stavy semaforů a fronty čekajících vozidel ve směrech sever-jih (SN) a východ-západ (WE).
+Přechody mezi stavy symbolizují změnu barev jednotlivých semaforů a pohyb vozidel na křižovatce.
+Model také zahrnuje bezpečnostní synchronizační prvky mezi jednotlivými směry, které zabraňují kolizím vozidel.
+
 \subsection*{Místa}
 \label{subsec:places}
 
+Stavy zobrazeny v \tabref{tab:places-description} popisují možné stavy semaforů na křižovatce pro jednotlivé směry SN a WE. \\\\
+$p_1$ - Limit pro maximální počet aut v křižovatce
+
+\begin{table}[h!]
+    \renewcommand{\arraystretch}{1.3}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{P{1cm}|P{1cm}|p{15cm}}
+            \multicolumn{2}{P{2.5cm}|}{\textbf{Stav}} & \textbf{Popis} \\
+            \hline
+            SN & WE & \\
+            \hline
+            $p_2$ & $p_8$    & Fronta čekajících aut na zelenou                \\
+            $p_3$ & $p_9$    & Zelená na semaforu                              \\
+            $p_4$ & $p_{10}$ & Žlutá na semaforu                               \\
+            $p_5$ & $p_{11}$ & Červená na semaforu                             \\
+            $p_6$ & $p_{12}$ & Dočasný stav blokující přechod žluté do červené \\
+            $p_7$ & $p_{13}$ & Zabezpečení střídání směrů                      \\
+        \end{tabular}%
+    }
+    \caption{Tabulku popisu stavů semaforů na křižovatce.}
+    \label{tab:places-description}
+\end{table}
+
 \subsection*{Přechody}
 \label{subsec:transitions}
+
+Obdobně jako u míst, přechody zobrazeny v \tabref{tab:transitions-description} popisují změny stavů semaforů na křižovatce pro jednotlivé směry SN a WE.
+
+\begin{table}[h!]
+    \renewcommand{\arraystretch}{1.3}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{P{1cm}|P{1cm}|p{15cm}}
+            \multicolumn{2}{P{2.5cm}|}{\textbf{Přechod}} & \textbf{Popis} \\
+            \hline
+            SN & WE & \\
+            \hline
+            $t_A$ & $t_L$ & Příjezd auta ze směru S nebo W                   \\
+            $t_B$ & $t_K$ & Odjezd auta ve směr N nebo E                     \\
+            $t_F$ & $t_G$ & Změna stavu semaforu ze zelené na žlutou         \\
+            $t_I$ & $t_J$ & Změna stavu semaforu ze žluté na červenou        \\
+            $t_C$ & $t_I$ & Změna stavu semaforu z červené na žluto-červeno  \\
+            $t_H$ & $t_E$ & Změna stavu semaforu ze žluto-červené na zelenou \\
+        \end{tabular}%
+    }
+    \caption{Tabulku popisu přechodů semaforů na křižovatce.}
+    \label{tab:transitions-description}
+\end{table}
 
 \endinput
