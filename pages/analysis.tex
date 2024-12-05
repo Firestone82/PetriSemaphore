@@ -54,9 +54,9 @@ Celkově tento systém t-invariantů je \textbf{úplný}.
             \ & \ul{Strukturální}   & \ul{Systémové} \\
             \ & $X_1^T$ = ({\tI})                                                    & $\sigma_1$ = $t_A$, $t_B$                \\[-5pt]
             \ & {\footnotesize pro $M^0$ = (3, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1)}  &                                          \\[5pt]
-            \ & $X_2^T$ = ({\tIII})                                                  & $\sigma_1$ = $t_L$, $t_K$                \\[-5pt]
+            \ & $X_2^T$ = ({\tII})                                                  & $\sigma_1$ = $t_L$, $t_K$                \\[-5pt]
             \ & {\footnotesize pro $M^0$ = (3, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0)}  &                                          \\[5pt]
-            \ & $X_3^T$ = ({\tIV})                                                   & $\sigma_1$ = $t_F$, $t_C$, $t_I$, $t_H$  \\[-5pt]
+            \ & $X_3^T$ = ({\tIII})                                                   & $\sigma_1$ = $t_F$, $t_C$, $t_I$, $t_H$  \\[-5pt]
             \ & {\footnotesize pro $M^0$ = (3, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0)}  &                                          \\[5pt]
             \ & $X_4^T$ = ({\tIV})                                                   & $\sigma_1$ = $t_G$, $t_J$, $t_D$, $t_E$  \\[-5pt]
             \ & {\footnotesize pro $M^0$ = (3, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1)}  &                                          \\
@@ -73,14 +73,15 @@ Celkově tento systém t-invariantů je \textbf{úplný}.
 Za pomocí P a T invariantů můžeme o síti říci tyto vlastnosti:
 
 \begin{itemize}
+    \item Síť je \textbf{konzervativní}, protože existuje p-invariant pokrývající všechny stavy. \\ $Y_6$ = \orderArrayNumbered{\pAll}
+    \item Síť je \textbf{\ut{striktně} repetiční} protože existuje t-invariant pokrývající všechny přechody. \\ $X_5$ = (\tAll)
     \item Síť je \textbf{k-omezená} pro k = 3, kde k je maximální počet aut pohybující se v křižovatce.
-    \item Síť je \textbf{repetiční}, \textbf{reverzibilní}, protože existuje T-Invariant pokrývající všechny přechody. $X_5$ = (\tAll)
-    \item Síť je \textbf{živá}, protože existuje t-invariant, který ukazuje proveditelnost každého přechod.
-    \item Síť je \textbf{\ut{striktně} konzervativní}, protože existuje p-invariant pokrývající všechny stavy. $Y_6$ = \orderArrayNumbered{\pAll}
     \item {
         Síť je \textbf{bezpečná} pouze pro vnitřní komponentu systému křižovatky.
         Celý systém je \textbf{bezpečný} v momentě, kdy je síť omezena pro maximálně 1 auto.
     }
+    \item Síť je \textbf{živá}, vzhledem k vytvořenému grafu dosažitelnosti pro výchozí značení.
+    \item Síť je \textbf{reverzibilní}, protože dle grafu dosažitelnosti neexistuje stav, ze kterého by se nedalo dostat zpět do výchozího značení.
 \end{itemize}
 
 \endinput
