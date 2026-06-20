@@ -1,31 +1,20 @@
-<img width="20%" src="assets/icon-no-bg.png" align="right" alt="Project Icon">
+# PetriSemaphore
 
-# Project for PES: Semaphore Network Modeled in Petri Net
-- Author: Pavel Mikula (MIK0486)  
-- Estimated Time Spent: ~26 hours
+> **VŠB-TUO** — School project · Parallel and Distributed Systems (PES)
 
-## Project Overview
-This project models a **traffic light system for an intersection** using a Petri Net. The system captures:
-- **Traffic signal states** for two directions: **north-south (NS)** and **east-west (EW)**.
-- **Vehicle queues** at the intersection for both directions.
+![LaTeX](https://img.shields.io/badge/LaTeX-TeX-blue)
 
-The simulation transitions through different states, representing:
-- Changes in traffic light colors.
-- Vehicle movements through the intersection.
+## About
 
-Safety synchronization mechanisms are implemented to **prevent vehicle collisions**, ensuring a safe and efficient traffic flow between the two directions.
+A LaTeX document modeling and analyzing a semaphore synchronization network using Petri Net notation, submitted for the PES (Parallel and Distributed Systems) course at VŠB-TUO. Covers the formal Petri Net model, reachability analysis, and correctness properties of the semaphore network.
 
-## Usage
-To explore and simulate the model:
-1. Open the [Petri Net Editor](https://pes.vsb.cz/petrineteditor/#/model).
-2. Import the `.npn` file located in the `assets/net` folder of this repository.
+## Build
 
-The model is **preconfigured for simulation**, allowing you to:
-- Observe the system's behavior.
-- Test various traffic scenarios directly in the editor.
+1. Compile the document:
+   ```bash
+   pdflatex main.tex
+   ```
 
-## Release Information
-A fully exported description of this network is available in the **Release** section of this repository.
+## License
 
-## Showcase
-![Network Diagram](assets/pes_network.png)
+This project was created as a school assignment at VŠB-TUO.
